@@ -1,0 +1,83 @@
+{% extends "index.html" %}
+
+{% block content%}
+<div class="container">
+    <br />
+    <br />
+    <br />
+    <main class="form-signin text-center">
+        <form class="col-sm-6 offset-sm-3 reg-wrap" method="POST" action="/event/request-quote">
+            <h1 class="h3 mb-3 fw-normal">Request a Quote</h1>
+            <div class="form-floating">
+                <select class="form-select" name="eventType" id="eventType">
+                    {% if current_type == 'none' or current_type == 'wedding' %}
+                        <option value="wedding" selected="selected">Wedding Event</option>
+                    {% else %}
+                        <option value="wedding">Wedding Event</option>
+                    {% endif%}
+                    {% if current_type == 'birthday' %}
+                        <option value="birthday" selected="selected">Birthday Event</option>
+                    {% else %}
+                        <option value="birthday">Birthday Event</option>
+                    {% endif%}
+                    {% if current_type == 'coperate' %}
+                        <option value="coperate" selected="selected">Corperate Event</option> 
+                    {% else %}
+                        <option value="coperate">Corperate Event</option> 
+                    {% endif %}
+                    {% if current_type == 'together' %}
+                    <option value="together" selected="selected">Get Together Event</option> 
+                    {% else %}
+                    <option value="together">Get Together Event</option> 
+                    {% endif %}
+                    {% if current_type == 'baby' %}
+                    <option value="baby" selected="selected">Baby Shower Event</option> 
+                    {% else %}
+                    <option value="baby">Baby Shower Event</option> 
+                    {% endif %}
+                    {% if current_type == 'christmas' %}
+                    <option value="christmas" selected="selected">Christmas Event</option> 
+                    {% else %}
+                    <option value="christmas">Christmas Event</option> 
+                    {% endif %}
+                </select>
+                <label for="eventType">Event Type</label>
+            </div>
+            <br />
+            <div class="form-floating">
+                <select class="form-select" name="role" id="role">
+                    <option value="1" selected="selected">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+                <label for="role">Number of Guests</label>
+            </div>
+            <br />
+            <div class="form-group">
+                <input id="name" type="text" class="form-control" name="name" placeholder="username" required>
+            </div>
+            <br />
+            <div class="form-group">
+                <input id="email" type="text" class="form-control" name="email" placeholder="Email" required>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1 fw-normal">Event Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3"></textarea>
+            </div>
+            <br />
+            <div class="form-group">
+                <input id="price" type="text" class="form-control" name="price" placeholder="Price Range" required>
+            </div>
+            <br />
+            <button class="w-100 btn btn-lg btn-primary do-reg" type="submit">Submit</button><br/><br/>
+            <a href="/event/home" class="w-100 btn btn-lg btn-secondary">Back</a>
+            <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+        </form>
+    </main>
+</div>
+{% endblock%}

@@ -1,0 +1,39 @@
+{% extends "index.html" %}
+
+{% block content%}
+<div class="container">
+    <br />
+    <br />
+    <br />
+    <main class="form-signin text-center">
+        <form class="col-sm-6 offset-sm-3 reg-wrap" method="POST" action="/event/consultation">
+            <h1 class="h3 mb-3 fw-normal">Consultation</h1>
+            <div class="form-group">
+                <input id="name" type="text" class="form-control" name="name" placeholder="Username" required>
+            </div>
+            <br />
+            <div class="form-group">
+                <input id="number" type="text" class="form-control" name="number" placeholder="Contact Number" required>
+            </div>
+            <br />
+            <div class="form-floating">
+                <select class="form-select" name="role" id="role">
+                    <option value="1" selected="selected">9AM - 12PM</option>
+                    <option value="2">2PM - 4PM</option>
+                    <option value="3">6PM - 8PM</option>
+                </select>
+                <label for="role">Preferred time to contact</label>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1 fw-normal">Query</label>
+                <textarea class="form-control" name="query" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <br />
+            <button class="w-100 btn btn-lg btn-primary do-reg" type="submit">Submit</button><br/><br/>
+            <a href="/event/home" class="w-100 btn btn-lg btn-secondary">Back</a>
+            <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+        </form>
+    </main>
+</div>
+{% endblock%}

@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+{% block content%}
+<div class="container">
+    <br />
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Contact No</th>
+                <th>Perferred Time</th>
+                <th>Query</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for consultation in consultations %}
+            <tr>
+                <td>{{loop.index}}</td>
+                <td>{{consultation[1]}}</td>
+                <td>{{consultation[2]}}</td>
+                <td>{{consultation[3]}}</td>
+                <td>{{consultation[4]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock%}
