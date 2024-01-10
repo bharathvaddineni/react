@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <nav>
+    <a href="/">Home</a>
+  </nav>
+  <form method="post">
+    {%if error%}
+    <p>{{error}}</p>
+    {% endif %}
+    {{form.hidden_tag()}}
+    {{form.fname.label}} {{form.fname}}
+    {{form.lname.label}} {{form.lname}}
+    {{form.email.label}} {{form.email}}
+    {{form.password.label}} {{form.password}}
+    {{form.confirmpassword.label}} {{form.confirmpassword}}
+
+    <br>
+    {{form.enter()}}
+  </form>
+</body>
+
+</html>
